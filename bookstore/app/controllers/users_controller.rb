@@ -1,12 +1,20 @@
 class UsersController < ApplicationController
   # GET /users
   # GET /users.json
+  
+  
+  # Definimos add_book
+  def add_book
+	@user = User.find(params[:id])
+  end
+  
   def index
     @users = User.all
 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @users }
+	  format.xml  { render xml: @users }  #Asignando formato xml
     end
   end
 
@@ -17,7 +25,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @user }
+      format.json { render json: @user }	  
     end
   end
 

@@ -5,6 +5,24 @@
   <%= @user.name %>
 </p>
 
+<table>
+	<% @user.books.each do |book| %>
+		<tr>
+			<td><%= book.title %></td>
+		</tr>	
+	<% end %>
+</table>
+
+
+
+<%# 
+add_book: Agrega libro.
+user: Es donde se encuentra la pantalla.
+path: Con esto toma la ruta.
+@user: Se envia como parametro el usuario.
+%>
+
+<%= link_to 'Add Book', add_book_user_path(@user) %>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

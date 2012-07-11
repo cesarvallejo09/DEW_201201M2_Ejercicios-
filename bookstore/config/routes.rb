@@ -1,10 +1,17 @@
 Bookstore::Application.routes.draw do
-  resources :user_books
 
-  resources :users
+  # Estos resources crean automaticamente los vinculos en las pantallas.
+
+  resources :users do
+	  member do
+		get "add_book"
+	  end
+  end
+
+  resources :user_books 
 
   resources :books
-
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
