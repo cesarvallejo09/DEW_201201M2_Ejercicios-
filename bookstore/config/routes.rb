@@ -1,5 +1,8 @@
 Bookstore::Application.routes.draw do
 
+#root :to => "book#show", :id=> '1'
+root :to => "users#index"
+
   # Estos resources crean automaticamente los vinculos en las pantallas.
 
   resources :users do
